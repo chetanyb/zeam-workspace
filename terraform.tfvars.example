@@ -1,0 +1,28 @@
+# ============================================================================
+# TERRAFORM VARIABLE VALUES - EXAMPLE
+# ============================================================================
+# Copy this file to terraform.tfvars and fill in your actual values
+# ============================================================================
+
+# General settings
+environment = "dev"
+aws_region  = "ap-south-1"  # Chose a region closer to you for better latency
+
+# Instance configuration
+instance_type_amd64    = "t3.medium"     # 2 vCPU, 4 GB RAM
+enable_amd64_instance  = true
+enable_arm64_instance  = false           # Enable for ARM64 testing
+root_volume_size_gb    = 30              # Minimum required
+
+# SSH configuration
+# Generate key: ssh-keygen -t ed25519 -f ~/.ssh/lean-consensus-aws -C "lean-consensus-testing"
+# Then paste the content of ~/.ssh/lean-consensus-aws.pub here
+ssh_public_key = "ssh-ed25519 AAAAC3Nza... your-email@example.com"
+
+# Security - Replace with your IP address
+# Find your IP: curl ifconfig.me
+ssh_allowed_ips     = ["0.0.0.0/0"]  # CHANGE THIS to your IP, e.g., ["203.0.113.0/32"]
+metrics_allowed_ips = ["0.0.0.0/0"]  # CHANGE THIS to your IP, e.g., ["203.0.113.0/32"]
+
+# Monitoring
+enable_detailed_monitoring = false  # Set to true for production
