@@ -42,7 +42,7 @@ chown -R ubuntu:ubuntu lean-quickstart
 
 # Pull Docker images
 docker pull g11tech/zeam:latest
-docker pull reamlabs/ream:latest
+docker pull ghcr.io/reamlabs/ream:latest
 docker pull qdrvm/qlean-mini:dd67521
 
 # Set up log directory
